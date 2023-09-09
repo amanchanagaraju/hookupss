@@ -206,11 +206,6 @@ video {
     padding: 10px;
   }
 
-  .logo {
-    max-width: 80%;
-    height: 100%;
-  }
-
   .main-container {
     padding: 10px;
   }
@@ -241,8 +236,9 @@ video {
     max-height: 42px !important;
   }
   img.logo {
-    max-height: 60%;
+    max-height: 100%;
     max-width: 25%;
+    flex-shrink: 0;
   }
   .headerText {
     font-size: 90%;
