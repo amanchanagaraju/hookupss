@@ -284,7 +284,8 @@ video {
   main.video_chat_main_container {
     flex-basis: 100%;
   }
-  .chat-container {
+  .chat-text-area {
     flex-basis: 80%;
+    margin: 10px;
   }
 }

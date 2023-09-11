@@ -51,7 +51,7 @@ if (omeID) {
 }
 // ......Delete All Records..........
 
-document.getElementById("deleteButton").addEventListener("click", () => {
+ById("deleteButton").addEventListener("click", () => {
   fetch("/deleteAllRecords", {
     method: "DELETE",
   })
@@ -69,7 +69,7 @@ function runUser() {
       video: true,
       audio: true,
     });
-    document.getElementById("user-1").srcObject = localStream;
+    ById("user-1").srcObject = localStream;
     $.post("/get-remote-users", { omeID: username })
       .done(function (data) {
         console.log(data);
@@ -107,7 +107,7 @@ function runUser() {
   let createPeerConnection = async () => {
     peerConnection = new RTCPeerConnection(servers);
     remoteStream = new MediaStream();
-    document.getElementById("user-2").srcObject = remoteStream;
+    ById("user-2").srcObject = remoteStream;
     localStream.getTracks().forEach((track) => {
       peerConnection.addTrack(track, localStream);
     });
@@ -262,7 +262,7 @@ function runUser() {
     remotStream.getTracks().forEach((track) => track.stop());
     peerConnection.close();
     document.querySelector(".chat-text-area").innerHTML = "";
-    const remoteVid = document.getElementById("user-2");
+    const remoteVid = ById("user-2");
     if (remoteVid.srcObject) {
       remoteVid.srcObject.getTracks().forEach((track) => track.stop());
       remoteVid.srcObject = null;
@@ -333,7 +333,7 @@ function runUser() {
     remotStream.getTracks().forEach((track) => track.stop());
 
     await peerConnection.close();
-    const remoteVid = document.getElementById("user-2");
+    const remoteVid = ById("user-2");
     if (remoteVid.srcObject) {
       remoteVid.srcObject.getTracks().forEach((track) => track.stop());
       remoteVid.srcObject = null;

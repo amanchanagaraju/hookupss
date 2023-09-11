@@ -29,7 +29,7 @@ socket.on("mySocketId", (socketId) => {
   console.log("My Socket ID:", socketId);
 });
 
-document.getElementById("deleteButton").addEventListener("click", () => {
+ById("deleteButton").addEventListener("click", () => {
   fetch("/deleteAllRecords", {
     method: "DELETE",
   })
@@ -73,7 +73,7 @@ function runUser() {
   let createPeerConnection = async () => {
     peerConnection = new RTCPeerConnection(servers);
     remoteStream = new MediaStream();
-    document.getElementById("user-2").srcObject = remoteStream;
+    ById("user-2").srcObject = remoteStream;
     localStream.getTracks().forEach((track) => {
       peerConnection.addTrack(track, localStream);
     });
@@ -108,7 +108,7 @@ function runUser() {
   function sendData() {
     const msgData = msgInput.value;
     chatTextArea.innerHTML +=
-      "<div style='margin-top:2px; margin-bottom:2px;'><b>Me: </b>" +
+      "<div style='margin-top:10px; margin-bottom:2px;'><b>Me: </b>" +
       msgData +
       "</div>";
     if (sendChannel) {
@@ -242,7 +242,7 @@ function runUser() {
     remotStream.getTracks().forEach((track) => track.stop());
 
     await peerConnection.close();
-    const remoteVid = document.getElementById("user-2");
+    const remoteVid = ById("user-2");
     if (remoteVid.srcObject) {
       remoteVid.srcObject.getTracks().forEach((track) => track.stop());
       remoteVid.srcObject = null;
