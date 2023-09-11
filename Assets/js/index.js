@@ -108,7 +108,7 @@ function runUser() {
   function sendData() {
     const msgData = msgInput.value;
     chatTextArea.innerHTML +=
-      "<div style='margin-top:2px; margin-bottom:2px;'><b>Me: </b>" +
+      "<div style='margin-top:10px; margin-bottom:2px;'><b>Me: </b>" +
       msgData +
       "</div>";
     if (sendChannel) {
